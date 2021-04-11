@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="../static/css/border.css" th:href="@{/css/border.css}" rel="stylesheet"/>
+    <title>Snakes and Ladders</title>
+</head>
+<body>
+<h1 th:text="Game"></h1>
+<h2 th:if="${isWin==true}">You win</h2>
+<div class="board_background">
+    <div class="board_field">
+        <div th:each="blockLine: ${board}" th:class="board_line">
+            <div th:each="block: ${blockLine}" class="block">
+                <p th:text="${block.positionNumber}"></p>
+            </div>
+            <br>
+        </div>
+        <div class="token" th:style="|left: ${tokenWidth}px; bottom:  ${tokenHeight}px;|"></div>
+    </div>
+</div>
+<p th:unless="${isWin==true}">Ваш хід</p>
+<p th:unless="${generated}==null" th:text="${generated}"></p>
+<div class="buttons">
+    <button th:unless="${isWin==true}"><a th:href="@{/generate}">Кинути кубик</a></button>
+    <button th:unless="${generated==null || isWin==true}">
+        <a th:href="@{/move/{points}(points=${generated})}">Перемістити персонажа</a>
+    </button>
+    <button><a th:href="@{/reset}">Почати спочатку</a></button>
+</div>
+</body>
+</html>
