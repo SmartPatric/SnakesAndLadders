@@ -23,11 +23,15 @@
 <p th:unless="${isWin==true}">Ваш хід</p>
 <p th:unless="${generated}==null" th:text="${generated}"></p>
 <div class="buttons">
-    <button th:unless="${isWin==true}"><a th:href="@{/generate}">Кинути кубик</a></button>
+    <button th:unless="${isWin==true}">
+        <a th:href="@{/generate}">Кинути кубик</a>
+    </button>
     <button th:unless="${generated==null || isWin==true}">
         <a th:href="@{/move/{points}(points=${generated})}">Перемістити персонажа</a>
     </button>
-    <button><a th:href="@{/reset}">Почати спочатку</a></button>
+    <button>
+        <a th:href="@{/reset}">Почати спочатку</a>
+    </button>
 </div>
 </body>
 </html>

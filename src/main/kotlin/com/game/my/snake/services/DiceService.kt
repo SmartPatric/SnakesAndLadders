@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service
 @Service
 class DiceService {
 
-    fun generateNum():Int {
+    fun generateNum(): Int {
         return Dice.generateNumber()
     }
 }

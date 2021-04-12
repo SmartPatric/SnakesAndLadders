@@ -80,6 +80,6 @@ class SnakeApplicationTests {
 
     @Test
     fun testCreateBoard() {
-        assertThat(boardService?.createBoard()!=null)
+        assertThat(boardService?.createBoard() != null)
     }
 }

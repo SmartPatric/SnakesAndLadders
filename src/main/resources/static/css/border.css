@@ -4,7 +4,6 @@ body {
     background-color: azure;
 }
 
-
 .block {
     height: 50px;
     width: 50px;
@@ -54,7 +53,7 @@ button {
     padding: 10px;
 }
 
-button:hover{
+button:hover {
     background-color: #8c0015;
 }
 
